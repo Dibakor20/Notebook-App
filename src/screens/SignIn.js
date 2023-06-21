@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -6,24 +6,30 @@ import {
   Image,
   TextInput,
   KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import login from "../../assets/login.png";
 import Button from "../components/Button";
 
 export default function SignIn() {
+
   return (
     <SafeAreaView>
-      <Image style={styles.loginImage} source={login} />
-      <Text style={styles.loginTitle}>Login</Text>
-      <View>
-        <TextInput placeholder="Email ID" style={styles.textInput} />
-        <TextInput placeholder="Password" style={styles.textInput} />
-        <Button
-          title="Login"
-          customStyles={{ alignSelf: "center", marginTop: 20 }}
-        />
-      </View>
+      <ScrollView>
+        <KeyboardAvoidingView behavior="padding">
+          <Image style={styles.loginImage} source={login} />
+          <Text style={styles.loginTitle}>Login</Text>
+          <View>
+            <TextInput placeholder="Email ID" style={styles.textInput} />
+            <TextInput placeholder="Password" style={styles.textInput} />
+            <Button
+              title="Login"
+              customStyles={{ alignSelf: "center", marginTop: 20 }}
+            />
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 }

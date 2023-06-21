@@ -9,10 +9,8 @@ export default function Button({title,onPress,customStyles}) {
     )
 }
 
-
 const styles = StyleSheet.create({
     button: {
-        
         borderRadius: 20,
         width: 165,
         height: 45,
