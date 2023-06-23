@@ -7,29 +7,37 @@ import {
   TextInput,
   KeyboardAvoidingView,
   ScrollView,
+  Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import login from "../../assets/login.png";
 import Button from "../components/Button";
 
-export default function SignIn() {
-
+export default function SignIn({ navigation }) {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <KeyboardAvoidingView behavior="padding">
-          <Image style={styles.loginImage} source={login} />
-          <Text style={styles.loginTitle}>Login</Text>
-          <View>
-            <TextInput placeholder="Email ID" style={styles.textInput} />
-            <TextInput placeholder="Password" style={styles.textInput} />
-            <Button
-              title="Login"
-              customStyles={{ alignSelf: "center", marginTop: 20 }}
-            />
-          </View>
-        </KeyboardAvoidingView>
-      </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      {/* <KeyboardAvoidingView behavior="padding"> */}
+      <Image style={styles.loginImage} source={login} />
+      <Text style={styles.loginTitle}>Login</Text>
+      <TextInput placeholder="Email ID" style={styles.textInput} />
+      <TextInput placeholder="Password" style={styles.textInput} />
+      <Button
+        title="Login"
+        customStyles={{ alignSelf: "center", marginTop: 20 }}
+      />
+      <View style={styles.bottomContent}>
+        <Pressable
+         onPress={() => {
+          navigation.navigate("SignUp");
+        }}
+        >
+          <Text>
+            Don't have an account?{" "}
+            <Text style={{ color: "green", fontWeight: "600" }}>Sign Up</Text>
+          </Text>
+        </Pressable>
+      </View>
+      {/* </KeyboardAvoidingView> */}
     </SafeAreaView>
   );
 }
@@ -53,5 +61,10 @@ const styles = StyleSheet.create({
     borderBottomColor: "grey",
     marginHorizontal: 30,
     marginVertical: 10,
+  },
+  bottomContent: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
 });
