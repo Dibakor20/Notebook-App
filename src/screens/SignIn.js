@@ -18,11 +18,11 @@ export default function SignIn({ navigation }) {
     <SafeAreaView style={{ flex: 1 }}>
       {/* <KeyboardAvoidingView behavior="padding"> */}
       <Image style={styles.loginImage} source={login} />
-      <Text style={styles.loginTitle}>Login</Text>
+      <Text style={styles.loginTitle}>Sign In</Text>
       <TextInput placeholder="Email ID" style={styles.textInput} />
       <TextInput placeholder="Password" style={styles.textInput} />
       <Button
-        title="Login"
+        title="Sign In"
         customStyles={{ alignSelf: "center", marginTop: 20 }}
       />
       <View style={styles.bottomContent}>
