@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import login from "../../assets/login.png";
 import Button from "../components/Button";
+import Input from "../components/Input";
 
 export default function SignIn({ navigation }) {
   return (
@@ -19,8 +20,8 @@ export default function SignIn({ navigation }) {
       {/* <KeyboardAvoidingView behavior="padding"> */}
       <Image style={styles.loginImage} source={login} />
       <Text style={styles.loginTitle}>Sign In</Text>
-      <TextInput placeholder="Email ID" style={styles.textInput} />
-      <TextInput placeholder="Password" style={styles.textInput} />
+      <Input placeholder="Email ID" />
+      <Input placeholder="Password"  />
       <Button
         title="Sign In"
         customStyles={{ alignSelf: "center", marginTop: 20 }}
