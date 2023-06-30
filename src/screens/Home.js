@@ -4,7 +4,7 @@ import React from "react";
 export default function Home() {
     return (
         <View>
-            <Text>New home screen</Text>
+            <Text>New home screens</Text>
         </View>
     )
 }
